@@ -1,5 +1,5 @@
-import "reflect-metadata"
-import {DataSource} from "typeorm"
+import "reflect-metadata";
+import {DataSource} from "typeorm";
 
 const MariadbConnection = new DataSource({
    type: "mariadb",
@@ -13,6 +13,6 @@ const MariadbConnection = new DataSource({
    entities: [],
    migrations: [],
    subscribers: [],
-})
+});
 
 export {MariadbConnection}
