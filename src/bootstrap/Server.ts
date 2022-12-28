@@ -1,6 +1,6 @@
 import express, {Application, json, urlencoded} from "express"
 import * as http from "http"
-import {MariadbConnection, RouterConfig} from "../config"
+import {MariadbConnection, ProviderConfig, RouterConfig} from "../config"
 import cors from "cors"
 
 class Server
@@ -40,6 +40,11 @@ class Server
       RouterConfig.forEach(() => {
          this.app.use()
       })
+   }
+
+   private configureProvider(): void
+   {
+      ProviderConfig.forEach(() => {})
    }
 }
 
