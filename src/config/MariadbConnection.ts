@@ -1,13 +1,14 @@
 import "reflect-metadata"
 import {DataSource} from "typeorm"
+import {Env} from "../constant";
 
 const MariadbConnection = new DataSource({
-   type: "mariadb",
-   host: "",
-   port: 3306,
-   username: "",
-   password: "",
-   database: "",
+   type: Env.dbType,
+   host: Env.dbHost,
+   port: Env.dbPort,
+   username: Env.dbUsername,
+   password: Env.dbPassword,
+   database: Env.dbName,
    synchronize: true,
    logging: false,
    entities: [],
