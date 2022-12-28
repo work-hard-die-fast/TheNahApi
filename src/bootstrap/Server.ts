@@ -1,6 +1,7 @@
-import express, {Application} from "express"
+import express, {Application, json, urlencoded} from "express"
 import * as http from "http"
 import {MariadbConnection} from "../config"
+import cors from "cors"
 
 class Server
 {
@@ -25,6 +26,13 @@ class Server
             console.error(error)
             console.log("------------------------")
          })
+   }
+
+   private configureApp(): void
+   {
+      this.app.use(json())
+      this.app.use(urlencoded({extended: true}))
+      this.app.use(cors())
    }
 }
 
