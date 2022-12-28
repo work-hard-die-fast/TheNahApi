@@ -1,0 +1,5 @@
+const ProviderConfig = [
+   ""
+]
+
+export {ProviderConfig}
