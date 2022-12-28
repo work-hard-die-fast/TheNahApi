@@ -16,7 +16,7 @@ class Server
       this.httpServer = http.createServer(this.app)
    }
 
-   async start(): Promise<void>
+   async start(callback?: (port: number) => void): Promise<void>
    {
       await this.connectDatabase()
       this.configureProvider()
@@ -24,6 +24,7 @@ class Server
       this.configureApp()
 
       this.httpServer.listen(this.serverPort)
+      callback && callback(this.serverPort)
    }
 
    private async connectDatabase(): Promise<void>
