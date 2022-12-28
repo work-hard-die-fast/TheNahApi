@@ -49,9 +49,7 @@ class Server
 
    private configureRouter(): void
    {
-      RouterConfig.forEach(() => {
-         this.app.use()
-      })
+      RouterConfig.forEach(() => {})
    }
 
    private configureProvider(): void
