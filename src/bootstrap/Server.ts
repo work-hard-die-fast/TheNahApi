@@ -22,6 +22,8 @@ class Server
       this.configureProvider()
       this.configureRouter()
       this.configureApp()
+
+      this.httpServer.listen(this.serverPort)
    }
 
    private async connectDatabase(): Promise<void>
