@@ -1,0 +1,5 @@
+const RouterConfig = [
+   ""
+]
+
+export {RouterConfig}
