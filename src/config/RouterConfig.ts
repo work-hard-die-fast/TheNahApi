@@ -1,5 +1,5 @@
 const RouterConfig = [
    ""
-];
+]
 
 export {RouterConfig}
