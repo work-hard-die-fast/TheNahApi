@@ -15,6 +15,15 @@ class Server
       this.serverPort = 3000
       this.httpServer = http.createServer(this.app)
    }
+
+   async start(): Promise<void>
+   {
+      await this.connectDatabase()
+      this.configureProvider()
+      this.configureRouter()
+      this.configureApp()
+   }
+
    private async connectDatabase(): Promise<void>
    {
       await MariadbConnection.initialize()
