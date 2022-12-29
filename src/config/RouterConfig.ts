@@ -1,7 +1,7 @@
 import {RegisterController} from "../app/controller"
-import {BaseController} from "../@base"
+// import {BaseController} from "../@base"
 
-const RouterConfig: {new(): BaseController}[] = [
+const RouterConfig: any[] = [
    RegisterController
 ]
 
