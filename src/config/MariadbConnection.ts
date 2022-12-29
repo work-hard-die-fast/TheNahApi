@@ -1,6 +1,7 @@
 import "reflect-metadata"
 import {DataSource} from "typeorm"
 import {Env} from "../constant";
+import {User} from "../app/model"
 
 const MariadbConnection = new DataSource({
    type: Env.dbType,
@@ -11,7 +12,7 @@ const MariadbConnection = new DataSource({
    database: Env.dbName,
    synchronize: true,
    logging: false,
-   entities: [],
+   entities: [User],
    migrations: [],
    subscribers: [],
 })
