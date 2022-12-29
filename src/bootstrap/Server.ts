@@ -2,6 +2,8 @@ import express, {Application, json, urlencoded} from "express"
 import * as http from "http"
 import {MariadbConnection, ProviderConfig, RouterConfig} from "../config"
 import cors from "cors"
+import {BaseController} from "../@base"
+import {container} from "tsyringe"
 
 class Server
 {
@@ -49,9 +51,9 @@ class Server
 
    private configureRouter(): void
    {
-      RouterConfig.forEach(() => {})
-      //    this.app.use(container.resolve(controller))
-      // })
+      RouterConfig.forEach((controller: {new(): BaseController}) => {
+         this.app.use(container.resolve(controller).getRouter())
+      })
    }
 
    private configureProvider(): void
