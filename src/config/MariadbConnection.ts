@@ -1,6 +1,6 @@
 import "reflect-metadata"
 import {DataSource} from "typeorm"
-import {Env} from "../constant";
+import {Env} from "../constant"
 import {User} from "../app/model"
 
 const MariadbConnection = new DataSource({
