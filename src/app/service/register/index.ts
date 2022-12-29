@@ -1,0 +1,1 @@
+export {IRegisterService} from "./IRegisterService"

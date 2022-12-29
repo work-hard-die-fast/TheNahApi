@@ -1,0 +1,6 @@
+interface IRegisterService
+{
+
+}
+
+export {IRegisterService}
