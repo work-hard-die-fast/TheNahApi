@@ -1,8 +1,9 @@
 import {BaseController} from "../../@base"
-import {Request, Response, Router} from "express"
+import {Request, Response} from "express"
 import {inject, injectable} from "tsyringe"
 import {InjectToken} from "../../constant"
 import {IRegisterService} from "../service"
+import {User} from "../model"
 
 @injectable()
 class RegisterController extends BaseController
@@ -16,16 +17,21 @@ class RegisterController extends BaseController
       this.registerService = registerService
    }
 
-   protected readonly router: Router
-
    protected configureRouter()
    {
       this.router.get("/test", this.test)
+      this.router.post("/sign-up-email", this.signUpWithEmail)
    }
 
    private test = (req: Request, res: Response): Response<string> =>
    {
       return res.send("yeah bitch?")
+   }
+
+   private signUpWithEmail = (req: Request, res: Response): Response<any> =>
+   {
+      const user: User = new User()
+      return res.send("signUpWithEmail")
    }
 }
 
