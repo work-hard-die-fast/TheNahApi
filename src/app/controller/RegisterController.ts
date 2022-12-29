@@ -1,11 +1,19 @@
 import {BaseController} from "../../@base"
 import {Request, Response, Router} from "express"
+import {inject, injectable} from "tsyringe"
+import {InjectToken} from "../../constant"
+import {IRegisterService} from "../service"
 
+@injectable()
 class RegisterController extends BaseController
 {
-   constructor()
-   {
+   private readonly registerService: IRegisterService
+
+   constructor(
+      @inject(InjectToken.RegisterService) registerService: IRegisterService
+   ) {
       super()
+      this.registerService = registerService
    }
 
    protected readonly router: Router
