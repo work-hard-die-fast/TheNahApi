@@ -11,7 +11,7 @@ abstract class BaseController
 
    protected abstract configureRouter(): void
 
-   protected getRouter(): Router
+   getRouter(): Router
    {
       this.configureRouter()
       return this.router
