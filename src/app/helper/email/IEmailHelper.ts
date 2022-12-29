@@ -1,0 +1,6 @@
+interface IEmailHelper
+{
+
+}
+
+export {IEmailHelper}
