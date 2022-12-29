@@ -50,6 +50,8 @@ class Server
    private configureRouter(): void
    {
       RouterConfig.forEach(() => {})
+      //    this.app.use(container.resolve(controller))
+      // })
    }
 
    private configureProvider(): void

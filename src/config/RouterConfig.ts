@@ -1,6 +1,7 @@
 import {RegisterController} from "../app/controller"
+import {BaseController} from "../@base";
 
-const RouterConfig = [
+const RouterConfig: (typeof BaseController)[] = [
    RegisterController
 ]
 
