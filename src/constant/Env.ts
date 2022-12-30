@@ -13,7 +13,13 @@ const Env = Object.freeze({
    dbName: process.env.DB_NAME as any,
 
    // jsonwebtoken
-   jwtSecret: process.env.JWT_SECRET as any
+   jwtSecret: process.env.JWT_SECRET as any,
+
+   // email
+   emailHost: process.env.EMAIL_HOST as any,
+   emailPort: process.env.EMAIL_PORT as any,
+   emailUser: process.env.EMAIL_USER as any,
+   emailPassword: process.env.EMAIL_PASSWORD as any
 })
 
 export {Env}
