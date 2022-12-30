@@ -1,4 +1,4 @@
-interface IBaseTypeormRepository
+interface IBaseTypeormRepository<T>
 {
 
 }
