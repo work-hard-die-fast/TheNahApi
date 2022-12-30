@@ -4,6 +4,7 @@ import {MariadbConnection, ProviderConfig, RedisClient, RouterConfig} from "../c
 import cors from "cors"
 import {BaseController} from "../@base"
 import {container} from "tsyringe"
+import {Env} from "../constant"
 
 class Server
 {
@@ -14,7 +15,7 @@ class Server
    constructor()
    {
       this.app = express()
-      this.serverPort = 3000
+      this.serverPort = Env.serverPort
       this.httpServer = http.createServer(this.app)
    }
 
