@@ -4,6 +4,7 @@ import {inject, injectable} from "tsyringe"
 import {InjectToken} from "../../constant"
 import {IRegisterService} from "../service"
 import {User} from "../model"
+import {SignUpWithEmailRequestBodySchema} from "../validation"
 
 @injectable()
 class RegisterController extends BaseController
