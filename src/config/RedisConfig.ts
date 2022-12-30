@@ -17,7 +17,7 @@ RedisClient.on("disconnect", () => {
 })
 
 RedisClient.on("connect", () => {
-   console.log("--- connecting")
+   console.log("--- connect redis successfully")
 })
 
 export {RedisClient}
