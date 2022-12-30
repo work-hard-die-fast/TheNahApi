@@ -1,6 +1,6 @@
 import Joi from "joi"
 
-const SignUpWithEmailRequestSchema = Joi
+const SignUpWithEmailRequestBodySchema = Joi
    .object({
       username: Joi.string().required(),
       email: Joi.string().email().required(),
@@ -8,4 +8,4 @@ const SignUpWithEmailRequestSchema = Joi
    })
    .options({abortEarly: false})
 
-export {SignUpWithEmailRequestSchema}
+export {SignUpWithEmailRequestBodySchema}

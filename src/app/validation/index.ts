@@ -1,1 +1,1 @@
-export {SignUpWithEmailRequestSchema} from "./SignUpWithEmailRequestSchema"
+export {SignUpWithEmailRequestBodySchema} from "./SignUpWithEmailRequestBodySchema"
