@@ -45,16 +45,6 @@ class Server
 
    private async connectRedis(): Promise<void>
    {
-      RedisClient.on("error", (error) => {
-         console.log("--- redis is dump")
-         console.error(error)
-         console.log("---------------------")
-      })
-
-      RedisClient.on("connect", () => {
-         console.log("--- connecting")
-      })
-
       RedisClient.connect()
          .then(() => {
             console.log("--- connect redis successfully")

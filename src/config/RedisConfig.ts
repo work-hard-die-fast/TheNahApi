@@ -5,6 +5,21 @@ const RedisClient = createClient({
    url: Env.redisUrl
 })
 
+RedisClient.on("error", async (error) => {
+   console.log("--- redis is dump")
+   console.error(error)
+   await RedisClient.disconnect()
+   console.log("---------------------")
+})
+
+RedisClient.on("disconnect", () => {
+   console.log("--- disconnected redis")
+})
+
+RedisClient.on("connect", () => {
+   console.log("--- connecting")
+})
+
 export {RedisClient}
 
 // await client.connect();
