@@ -1,6 +1,6 @@
 import {PrimaryGeneratedColumn} from "typeorm";
 
-class BaseTypeormModel
+abstract class BaseTypeormModel
 {
    @PrimaryGeneratedColumn()
    readonly id: string
