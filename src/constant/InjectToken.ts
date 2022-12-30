@@ -1,6 +1,9 @@
 const InjectToken = Object.freeze({
    // services
-   RegisterService: "RegisterService"
+   RegisterService: "RegisterService",
+
+   // helper
+   JwtHelper: "JwtHelper"
 })
 
 export {InjectToken}
