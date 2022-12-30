@@ -1,6 +1,6 @@
 import {BaseTypeormRepository} from "../../../@base"
 import {IUserRepository} from "./IUserRepository"
-import {User} from "../../model";
+import {User} from "../../model"
 
 class UserRepository extends BaseTypeormRepository<UserRepository> implements IUserRepository
 {
