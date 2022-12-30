@@ -2,7 +2,7 @@ import {IRegisterService} from "./IRegisterService"
 import {inject, injectable} from "tsyringe"
 import {InjectToken} from "../../../constant"
 import {IJwtHelper, JwtHelper} from "../../helper"
-import {IUserRepository} from "../../repository";
+import {IUserRepository} from "../../repository"
 
 @injectable()
 class RegisterService implements IRegisterService
