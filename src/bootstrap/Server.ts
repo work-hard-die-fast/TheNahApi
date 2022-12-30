@@ -59,7 +59,7 @@ class Server
 
    private configureRouter(): void
    {
-      RouterConfig.forEach((controller: {new(): BaseController}) => {
+      RouterConfig.forEach((controller) => {
          this.app.use(container.resolve(controller).getRouter())
       })
    }
