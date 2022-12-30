@@ -45,15 +45,8 @@ class Server
 
    private async connectRedis(): Promise<void>
    {
-      RedisClient.connect()
-         .then(() => {
-            console.log("--- connect redis successfully")
-         })
-         .catch((error) => {
-            console.log("--- redis is dump")
-            console.error(error)
-            console.log("-----------------------")
-         })
+      // I have some events to handle error in RedisConfig
+      await RedisClient.connect()
    }
 
    private configureApp(): void
