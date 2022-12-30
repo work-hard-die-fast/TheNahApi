@@ -1,10 +1,18 @@
 import {IRegisterService} from "./IRegisterService"
-import {injectable} from "tsyringe"
+import {inject, injectable} from "tsyringe"
+import {InjectToken} from "../../../constant"
+import {IJwtHelper, JwtHelper} from "../../helper"
 
 @injectable()
 class RegisterService implements IRegisterService
 {
-   constructor() {}
+   private readonly jwtHelper: IJwtHelper
+   
+   constructor(
+      @inject(InjectToken.JwtHelper) jwtHelper: JwtHelper
+   ) {
+      this.jwtHelper = jwtHelper
+   }
 }
 
 export {RegisterService}
