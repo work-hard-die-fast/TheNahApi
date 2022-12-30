@@ -23,9 +23,9 @@ class Server
    {
       await this.connectDatabase()
       await this.connectRedis()
+      this.configureApp()
       this.configureProvider()
       this.configureRouter()
-      this.configureApp()
 
       this.httpServer.listen(this.serverPort)
       callback && callback(this.serverPort)
