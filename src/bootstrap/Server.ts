@@ -67,7 +67,7 @@ class Server
    private configureProvider(): void
    {
       ProviderConfig.forEach((provider) => {
-         container.register(provider.token, {useClass: provider.useClass})
+         container.register<any>(provider.token, {useClass: provider.useClass})
       })
    }
 }
