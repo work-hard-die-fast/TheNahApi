@@ -1,0 +1,6 @@
+interface IBaseTypeormRepository
+{
+
+}
+
+export {IBaseTypeormRepository}
