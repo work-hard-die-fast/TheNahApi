@@ -1,6 +1,6 @@
 import express, {Application, json, urlencoded} from "express"
 import * as http from "http"
-import {MariadbConnection, ProviderConfig, RouterConfig} from "../config"
+import {MariadbConnection, ProviderConfig, RedisClient, RouterConfig} from "../config"
 import cors from "cors"
 import {BaseController} from "../@base"
 import {container} from "tsyringe"
@@ -21,6 +21,7 @@ class Server
    async start(callback?: (port: number) => void): Promise<void>
    {
       await this.connectDatabase()
+      await this.connectRedis()
       this.configureProvider()
       this.configureRouter()
       this.configureApp()
@@ -39,6 +40,29 @@ class Server
             console.log("--- mariadb is dump")
             console.error(error)
             console.log("------------------------")
+         })
+   }
+
+   private async connectRedis(): Promise<void>
+   {
+      RedisClient.on("error", (error) => {
+         console.log("--- redis is dump")
+         console.error(error)
+         console.log("---------------------")
+      })
+
+      RedisClient.on("connect", () => {
+         console.log("--- connecting")
+      })
+
+      RedisClient.connect()
+         .then(() => {
+            console.log("--- connect redis successfully")
+         })
+         .catch((error) => {
+            console.log("--- redis is dump")
+            console.error(error)
+            console.log("-----------------------")
          })
    }
 
