@@ -19,7 +19,10 @@ const Env = Object.freeze({
    emailHost: process.env.EMAIL_HOST as any,
    emailPort: process.env.EMAIL_PORT as any,
    emailUser: process.env.EMAIL_USER as any,
-   emailPassword: process.env.EMAIL_PASSWORD as any
+   emailPassword: process.env.EMAIL_PASSWORD as any,
+
+   // redis
+   redisUrl: process.env.REDIS_URL as any
 })
 
 export {Env}
