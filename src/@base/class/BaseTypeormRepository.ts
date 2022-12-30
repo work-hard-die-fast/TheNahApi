@@ -6,7 +6,7 @@ abstract class BaseTypeormRepository<T> implements IBaseTypeormRepository<T>
 {
    protected readonly self: Repository<T>
 
-   protected constructor(repoType: {new(): T})
+   protected constructor(repoType: any)
    {
       this.self = MariadbConnection.getRepository<T>(repoType)
    }
