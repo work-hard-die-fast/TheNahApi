@@ -1,0 +1,6 @@
+interface IUserRepository
+{
+
+}
+
+export {IUserRepository}
