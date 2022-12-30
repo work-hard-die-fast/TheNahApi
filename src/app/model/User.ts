@@ -5,7 +5,7 @@ import {Column, Entity} from "typeorm"
 class User extends BaseTypeormModel
 {
    @Column()
-   readonly username: string
+   username: string
 
    @Column()
    email: string
