@@ -2,7 +2,7 @@ import {User} from "../../model"
 
 interface IRegisterService
 {
-   signUpWithEmail(newUser: User): Promise<string>
+   signUpWithEmail(registerUser: User): Promise<string>
 }
 
 export {IRegisterService}
