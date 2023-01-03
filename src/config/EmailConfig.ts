@@ -1,6 +1,7 @@
 import {Env} from "../constant"
+import nodemailer from "nodemailer"
 
-const EmailConfig = Object.freeze({
+const EmailConfig = nodemailer.createTransport({
    host: Env.emailHost, // "smtp.ethereal.email"
    port: Env.emailPort, // 587
    secure: false, // true for 465, false for other ports
